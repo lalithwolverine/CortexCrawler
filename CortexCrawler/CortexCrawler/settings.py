@@ -12,6 +12,26 @@ BOT_NAME = "CortexCrawler"
 SPIDER_MODULES = ["CortexCrawler.spiders"]
 NEWSPIDER_MODULE = "CortexCrawler.spiders"
 
+CONCURRENT_REQUESTS=32
+CONCURRENT_REQUESTS_PER_DOMAIN=32
+
+#DOWNLOAD_DELAY= 0.5
+
+#AUTOTHROTTLE_ENABLED=True
+#AUTOTHROTTLE_START_DELAY=1.0
+#AUTOTHROTTLE_MAX_DELAY=60
+
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0  # Cache forever (or set a reasonable expiration time)
+#HTTPCACHE_DIR = "httpcache"  # Directory to store cached responses
+
+ITEM_PIPELINES = {
+    "CortexCrawler.pipelines.CortexcrawlerPipeline": 300,
+}
+
+#DEPTH_LIMIT = 3  # Only crawl up to 3 levels deep
+
+LOG_LEVEL = "DEBUG"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "CortexCrawler (+http://www.yourdomain.com)"
